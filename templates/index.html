@@ -1,389 +1,446 @@
-<div style="align-self: stretch; padding-left: 80px; padding-right: 80px; padding-top: 40px; padding-bottom: 40px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
-  <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 28px; display: flex">
-    <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-      <div style="overflow: hidden; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-        <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">TransMilenio</div>
-        <div style="width: 12px; height: 12px; position: relative; overflow: hidden">
-          <div style="width: 3px; height: 6px; left: 4.50px; top: 3px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransMilenio - Buscador</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="bg-slate-50">
+
+    <div class="w-[1440px] min-h-[1100px] bg-gray-100 inline-flex flex-col justify-start items-start overflow-hidden">
+  <div class="self-stretch h-20 px-20 bg-white border-b border-zinc-200 inline-flex justify-between items-center overflow-hidden">
+    <div class="size- flex justify-start items-center gap-2.5 overflow-hidden">
+      <div class="size-11 bg-red-600 rounded-[100px] flex justify-center items-center overflow-hidden">
+        <div class="size-7 relative overflow-hidden">
+          <div class="w-6 h-5 left-[2.25px] top-[3.38px] absolute outline outline-1 outline-offset-[-0.50px] outline-white"></div>
         </div>
-        <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">Estaciones</div>
       </div>
-      <div style="align-self: stretch; color: #20252B; font-size: 34px; font-family: Inter; font-weight: 700; line-height: 40.80px; word-wrap: break-word">Encuentra tu próxima estación</div>
-      <div style="align-self: stretch; color: #68717D; font-size: 15px; font-family: Inter; font-weight: 400; word-wrap: break-word">Consulta estaciones, conoce su estado y descubre las rutas que pasan por ellas.</div>
+      <div class="size- inline-flex flex-col justify-start items-start gap-0.5 overflow-hidden">
+        <div class="justify-start text-red-600 text-2xl font-extrabold font-['Inter']">TRANSMILENIO</div>
+        <div class="justify-start text-gray-500 text-[9px] font-semibold font-['Inter'] tracking-wider">SISTEMA DE TRANSPORTE PÚBLICO</div>
+      </div>
     </div>
-    <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">¿Qué estación buscas?</div>
-        <div style="align-self: stretch; height: 60px; padding-left: 20px; padding-right: 20px; background: white; overflow: hidden; border-radius: 8px; outline: 1.50px #E31B23 solid; outline-offset: -1.50px; justify-content: flex-start; align-items: center; gap: 14px; display: inline-flex">
-          <div style="width: 23px; height: 23px; position: relative; overflow: hidden">
-            <div style="width: 17.25px; height: 17.25px; left: 2.88px; top: 2.88px; position: absolute; outline: 1px #E31B23 solid; outline-offset: -0.50px"></div>
+    <div class="self-stretch flex justify-start items-start gap-8 overflow-hidden">
+      <div class="self-stretch relative inline-flex flex-col justify-center items-start overflow-hidden">
+        <div class="justify-start text-red-600 text-sm font-bold font-['Inter']">Buscador</div>
+        <div class="w-16 h-[3px] left-0 top-[85px] absolute bg-red-600 rounded-xs"></div>
+      </div>
+      <div class="self-stretch inline-flex flex-col justify-center items-start overflow-hidden">
+        <div class="justify-start text-gray-500 text-sm font-medium font-['Inter']">Planeador de Viajes</div>
+      </div>
+      <div class="self-stretch inline-flex flex-col justify-center items-start overflow-hidden">
+        <div class="justify-start text-gray-500 text-sm font-medium font-['Inter']">Panel de Operador</div>
+      </div>
+      <div class="self-stretch inline-flex flex-col justify-center items-start overflow-hidden">
+        <div class="justify-start text-gray-500 text-sm font-medium font-['Inter']">Rendimiento</div>
+      </div>
+    </div>
+  </div>
+  <div class="self-stretch px-20 py-10 flex flex-col justify-start items-start gap-8 overflow-hidden">
+    <div class="self-stretch flex flex-col justify-start items-start gap-7">
+      <div class="self-stretch flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+        <div class="size- inline-flex justify-start items-center gap-2 overflow-hidden">
+          <div class="justify-start text-gray-500 text-xs font-semibold font-['Inter']">TransMilenio</div>
+          <div class="size-3 relative overflow-hidden">
+            <div class="w-[3px] h-1.5 left-[4.50px] top-[3px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
           </div>
-          <div style="flex: 1 1 0; color: #68717D; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Buscar nombre de estación (ej. CAL)</div>
-          <div style="padding-left: 7px; padding-right: 7px; padding-top: 4px; padding-bottom: 4px; overflow: hidden; border-radius: 4px; outline: 1px #E1E5EA solid; outline-offset: -1px; justify-content: flex-start; align-items: flex-start; display: flex">
-            <div style="color: #9098A2; font-size: 11px; font-family: Inter; font-weight: 400; word-wrap: break-word">⌘ K</div>
+          <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Estaciones</div>
+        </div>
+        <div class="self-stretch justify-start text-zinc-800 text-4xl font-bold font-['Inter'] leading-10">Encuentra tu próxima estación</div>
+        <div class="self-stretch justify-start text-gray-500 text-base font-normal font-['Inter']">Consulta estaciones, conoce su estado y descubre las rutas que pasan por ellas.</div>
+      </div>
+      <div class="self-stretch inline-flex justify-start items-start gap-6">
+        <div class="flex-1 inline-flex flex-col justify-start items-start gap-2.5">
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">¿Qué estación buscas?</div>
+          <div class="self-stretch h-14 px-5 bg-white rounded-lg outline outline-[1.50px] outline-offset-[-1.50px] outline-red-600 inline-flex justify-start items-center gap-3.5 overflow-hidden">
+            <div class="size-6 relative overflow-hidden">
+              <div class="size-4 left-[2.88px] top-[2.88px] absolute outline outline-1 outline-offset-[-0.50px] outline-red-600"></div>
+            </div>
+            <div class="flex-1 justify-start text-gray-500 text-base font-normal font-['Inter']">Buscar nombre de estación (ej. CAL)</div>
+            <div class="size- px-1.5 py-1 rounded-sm outline outline-1 outline-offset-[-1px] outline-zinc-200 flex justify-start items-start overflow-hidden">
+              <div class="justify-start text-gray-400 text-xs font-normal font-['Inter']">⌘ K</div>
+            </div>
+          </div>
+          <div class="self-stretch bg-white rounded-lg shadow-[0px_8px_24px_0px_rgba(32,37,43,0.05)] outline outline-1 outline-offset-[-1px] outline-zinc-200 flex flex-col justify-start items-start overflow-hidden">
+            <div class="self-stretch h-10 px-5 inline-flex justify-between items-center overflow-hidden">
+              <div class="justify-start text-gray-500 text-xs font-medium font-['Inter']">Coincidencias para «CAL»</div>
+              <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">2 resultados</div>
+            </div>
+            <div class="self-stretch h-20 px-5 bg-red-50 border-l-[3px] border-b border-red-600 inline-flex justify-start items-center gap-4 overflow-hidden">
+              <div class="size-9 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-zinc-200 flex justify-center items-center overflow-hidden">
+                <div class="size-5 relative overflow-hidden">
+                  <div class="w-3 h-4 left-[3.17px] top-[1.58px] absolute outline outline-1 outline-offset-[-0.50px] outline-red-600"></div>
+                </div>
+              </div>
+              <div class="flex-1 inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
+                <div class="justify-start text-zinc-800 text-base font-bold font-['Inter']">CAL CENTRAL</div>
+                <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Rutas 12, 24 y 46</div>
+              </div>
+              <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+                <div class="size-1.5 bg-green-700 rounded-full"></div>
+                <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+              </div>
+              <div class="size-4 relative overflow-hidden">
+                <div class="size-2.5 left-[3.75px] top-[3.75px] absolute outline outline-1 outline-offset-[-0.50px] outline-red-600"></div>
+              </div>
+            </div>
+            <div class="self-stretch h-20 px-5 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-4 overflow-hidden">
+              <div class="size-9 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-zinc-200 flex justify-center items-center overflow-hidden">
+                <div class="size-5 relative overflow-hidden">
+                  <div class="w-3 h-4 left-[3.17px] top-[1.58px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
+                </div>
+              </div>
+              <div class="flex-1 inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
+                <div class="justify-start text-zinc-800 text-base font-bold font-['Inter']">CAL ORIENTE</div>
+                <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Rutas 24 y 46</div>
+              </div>
+              <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+                <div class="size-1.5 bg-red-600 rounded-full"></div>
+                <div class="justify-start text-red-600 text-xs font-bold font-['Inter'] tracking-wide">CERRADA</div>
+              </div>
+              <div class="size-4 relative overflow-hidden">
+                <div class="w-1 h-2 left-[6.75px] top-[4.50px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+              </div>
+            </div>
+            <div class="self-stretch h-9 px-5 inline-flex justify-start items-center gap-2 overflow-hidden">
+              <div class="size-3 relative overflow-hidden">
+                <div class="size-2 left-[2.17px] top-[2.17px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
+              </div>
+              <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Selecciona una estación para consultar sus rutas</div>
+            </div>
           </div>
         </div>
-        <div style="align-self: stretch; background: white; box-shadow: 0px 8px 24px rgba(32, 37, 43, 0.05); overflow: hidden; border-radius: 8px; outline: 1px #E1E5EA solid; outline-offset: -1px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
-          <div style="align-self: stretch; height: 42px; padding-left: 20px; padding-right: 20px; overflow: hidden; justify-content: space-between; align-items: center; display: inline-flex">
-            <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 500; word-wrap: break-word">Coincidencias para «CAL»</div>
-            <div style="color: #68717D; font-size: 11px; font-family: Inter; font-weight: 400; word-wrap: break-word">2 resultados</div>
+        <div class="w-96 p-6 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-zinc-200 inline-flex flex-col justify-start items-start gap-4 overflow-hidden">
+          <div class="self-stretch inline-flex justify-between items-center overflow-hidden">
+            <div class="justify-start text-gray-500 text-[10px] font-bold font-['Inter'] tracking-wide">ESTACIÓN SELECCIONADA</div>
+            <div class="size- px-2.5 py-1.5 bg-emerald-50 rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+              <div class="size-1.5 bg-green-700 rounded-full"></div>
+              <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+            </div>
           </div>
-          <div style="align-self: stretch; height: 82px; padding-left: 20px; padding-right: 20px; background: #FFF4F4; overflow: hidden; border-left: 3px #E31B23 solid; border-bottom: 1px #E31B23 solid; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
-            <div style="width: 38px; height: 38px; background: white; overflow: hidden; border-radius: 8px; outline: 1px #E1E5EA solid; outline-offset: -1px; justify-content: center; align-items: center; display: flex">
-              <div style="width: 19px; height: 19px; position: relative; overflow: hidden">
-                <div style="width: 12.67px; height: 15.83px; left: 3.17px; top: 1.58px; position: absolute; outline: 1px #E31B23 solid; outline-offset: -0.50px"></div>
+          <div class="self-stretch flex flex-col justify-start items-start gap-2 overflow-hidden">
+            <div class="self-stretch justify-start text-zinc-800 text-3xl font-bold font-['Inter']">CAL CENTRAL</div>
+            <div class="size- inline-flex justify-start items-center gap-1.5 overflow-hidden">
+              <div class="size-3.5 relative overflow-hidden">
+                <div class="w-2.5 h-3 left-[2.33px] top-[1.17px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
               </div>
-            </div>
-            <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
-              <div style="color: #20252B; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">CAL CENTRAL</div>
-              <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">Rutas 12, 24 y 46</div>
-            </div>
-            <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-              <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-              <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-            </div>
-            <div style="width: 18px; height: 18px; position: relative; overflow: hidden">
-              <div style="width: 10.50px; height: 10.50px; left: 3.75px; top: 3.75px; position: absolute; outline: 1px #E31B23 solid; outline-offset: -0.50px"></div>
+              <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Red de estaciones · Bogotá</div>
             </div>
           </div>
-          <div style="align-self: stretch; height: 82px; padding-left: 20px; padding-right: 20px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
-            <div style="width: 38px; height: 38px; background: white; overflow: hidden; border-radius: 8px; outline: 1px #E1E5EA solid; outline-offset: -1px; justify-content: center; align-items: center; display: flex">
-              <div style="width: 19px; height: 19px; position: relative; overflow: hidden">
-                <div style="width: 12.67px; height: 15.83px; left: 3.17px; top: 1.58px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
-              </div>
+          <div class="self-stretch h-px bg-zinc-200"></div>
+          <div class="self-stretch inline-flex justify-between items-start overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-normal font-['Inter']">Rutas asignadas</div>
+            <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">3 rutas</div>
+          </div>
+          <div class="size- inline-flex justify-start items-start gap-2 overflow-hidden">
+            <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+              <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">Ruta 12</div>
             </div>
-            <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 6px; display: inline-flex">
-              <div style="color: #20252B; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">CAL ORIENTE</div>
-              <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">Rutas 24 y 46</div>
+            <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+              <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">Ruta 24</div>
             </div>
-            <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-              <div style="width: 7px; height: 7px; background: #E31B23; border-radius: 9999px"></div>
-              <div style="color: #E31B23; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">CERRADA</div>
-            </div>
-            <div style="width: 18px; height: 18px; position: relative; overflow: hidden">
-              <div style="width: 4.50px; height: 9px; left: 6.75px; top: 4.50px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
+            <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+              <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">Ruta 46</div>
             </div>
           </div>
-          <div style="align-self: stretch; height: 38px; padding-left: 20px; padding-right: 20px; overflow: hidden; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-            <div style="width: 13px; height: 13px; position: relative; overflow: hidden">
-              <div style="width: 8.67px; height: 8.67px; left: 2.17px; top: 2.17px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
+          <div class="self-stretch p-3 bg-emerald-50 rounded-md inline-flex justify-start items-center gap-2 overflow-hidden">
+            <div class="size-4 relative overflow-hidden">
+              <div class="size-3.5 left-[1.33px] top-[1.33px] absolute outline outline-1 outline-offset-[-0.50px] outline-green-700"></div>
             </div>
-            <div style="color: #68717D; font-size: 11px; font-family: Inter; font-weight: 400; word-wrap: break-word">Selecciona una estación para consultar sus rutas</div>
+            <div class="justify-start text-green-700 text-xs font-normal font-['Inter']">Estación habilitada para el servicio</div>
           </div>
         </div>
       </div>
-      <div style="width: 408px; padding: 24px; background: white; overflow: hidden; border-radius: 12px; outline: 1px #E1E5EA solid; outline-offset: -1px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 18px; display: inline-flex">
-        <div style="align-self: stretch; overflow: hidden; justify-content: space-between; align-items: center; display: inline-flex">
-          <div style="color: #68717D; font-size: 10px; font-family: Inter; font-weight: 700; letter-spacing: 1.10px; word-wrap: break-word">ESTACIÓN SELECCIONADA</div>
-          <div style="padding-left: 10px; padding-right: 10px; padding-top: 6px; padding-bottom: 6px; background: #EDF8F1; overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-            <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-            <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-          </div>
+    </div>
+    <div class="self-stretch bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-zinc-200 flex flex-col justify-start items-start overflow-hidden">
+      <div class="self-stretch px-7 pt-6 pb-5 inline-flex justify-between items-center overflow-hidden">
+        <div class="size- inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
+          <div class="justify-start text-zinc-800 text-2xl font-bold font-['Inter']">Catálogo de estaciones</div>
+          <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Explora la red por nombre, en orden alfabético.</div>
         </div>
-        <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
-          <div style="align-self: stretch; color: #20252B; font-size: 29px; font-family: Inter; font-weight: 700; word-wrap: break-word">CAL CENTRAL</div>
-          <div style="overflow: hidden; justify-content: flex-start; align-items: center; gap: 6px; display: inline-flex">
-            <div style="width: 14px; height: 14px; position: relative; overflow: hidden">
-              <div style="width: 9.33px; height: 11.67px; left: 2.33px; top: 1.17px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
+        <div class="size- flex justify-start items-center gap-4 overflow-hidden">
+          <div class="justify-start text-zinc-800 text-xs font-normal font-['Inter']">8 estaciones</div>
+          <div class="justify-start text-green-700 text-xs font-normal font-['Inter']">● 7 abiertas</div>
+          <div class="justify-start text-red-600 text-xs font-normal font-['Inter']">● 1 cerrada</div>
+        </div>
+      </div>
+      <div class="self-stretch px-7 pt-4 pb-5 bg-gray-50 border-t border-b border-zinc-200 inline-flex justify-start items-end gap-4 overflow-hidden">
+        <div class="w-60 h-16 inline-flex flex-col justify-center items-start gap-1.5 overflow-hidden">
+          <div class="size- inline-flex justify-start items-center gap-2 overflow-hidden">
+            <div class="size-4 relative overflow-hidden">
+              <div class="w-3.5 h-2.5 left-[1.33px] top-[3.33px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
             </div>
-            <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">Red de estaciones · Bogotá</div>
+            <div class="justify-start text-zinc-800 text-xs font-normal font-['Inter']">Filtrar por rango</div>
+          </div>
+          <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Elige la letra inicial y la letra final.</div>
+        </div>
+        <div class="w-44 inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">Desde</div>
+          <div class="self-stretch h-10 px-3 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-zinc-200 inline-flex justify-between items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-sm font-normal font-['Inter']">A</div>
+            <div class="size-4 relative overflow-hidden">
+              <div class="w-2 h-1 left-[4px] top-[6px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
+            </div>
           </div>
         </div>
-        <div style="align-self: stretch; height: 1px; background: #E1E5EA"></div>
-        <div style="align-self: stretch; overflow: hidden; justify-content: space-between; align-items: flex-start; display: inline-flex">
-          <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 400; word-wrap: break-word">Rutas asignadas</div>
-          <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">3 rutas</div>
-        </div>
-        <div style="overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
-          <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-            <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">Ruta 12</div>
-          </div>
-          <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-            <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">Ruta 24</div>
-          </div>
-          <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-            <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">Ruta 46</div>
+        <div class="w-44 inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">Hasta</div>
+          <div class="self-stretch h-10 px-3 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-zinc-200 inline-flex justify-between items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-sm font-normal font-['Inter']">M</div>
+            <div class="size-4 relative overflow-hidden">
+              <div class="w-2 h-1 left-[4px] top-[6px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
+            </div>
           </div>
         </div>
-        <div style="align-self: stretch; padding: 12px; background: #EDF8F1; overflow: hidden; border-radius: 6px; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-          <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
-            <div style="width: 13.33px; height: 13.33px; left: 1.33px; top: 1.33px; position: absolute; outline: 1px #17834C solid; outline-offset: -0.50px"></div>
+        <div class="h-10 px-5 bg-red-600 rounded-lg flex justify-start items-center gap-3 overflow-hidden">
+          <div class="justify-start text-white text-xs font-normal font-['Inter']">Ver Rango</div>
+          <div class="size-4 relative overflow-hidden">
+            <div class="size-2.5 left-[3.33px] top-[3.33px] absolute outline outline-1 outline-offset-[-0.50px] outline-white"></div>
           </div>
-          <div style="color: #17834C; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">Estación habilitada para el servicio</div>
+        </div>
+        <div class="flex-1 h-10 flex justify-end items-center overflow-hidden">
+          <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Mostrando de A a M</div>
+        </div>
+      </div>
+      <div class="self-stretch h-11 px-7 border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-2 overflow-hidden">
+          <div class="justify-start text-gray-500 text-[10px] font-bold font-['Inter'] tracking-wide">ESTACIÓN</div>
+          <div class="size-3.5 relative overflow-hidden">
+            <div class="size-2.5 left-[1.75px] top-[2.33px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
+          </div>
+        </div>
+        <div class="w-96 justify-start text-gray-500 text-[10px] font-bold font-['Inter'] tracking-wide">RUTAS</div>
+        <div class="w-44 justify-start text-gray-500 text-[10px] font-bold font-['Inter'] tracking-wide">ESTADO</div>
+        <div class="w-5 h-3.5"></div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+          </div>
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">AVENIDA JIMÉNEZ</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">12</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">24</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-green-700 rounded-full"></div>
+            <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+          </div>
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">BICENTENARIO</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">12</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">46</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-green-700 rounded-full"></div>
+            <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-red-50 border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-red-600"></div>
+          </div>
+          <div class="justify-start text-red-600 text-xs font-bold font-['Inter']">CAL CENTRAL</div>
+          <div class="justify-start text-red-600 text-[10px] font-normal font-['Inter']">Seleccionada</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">12</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">24</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">46</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-green-700 rounded-full"></div>
+            <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-red-600"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+          </div>
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">CAL ORIENTE</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">24</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">46</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-red-600 rounded-full"></div>
+            <div class="justify-start text-red-600 text-xs font-bold font-['Inter'] tracking-wide">CERRADA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+          </div>
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">CALLE 26</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">12</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">24</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-green-700 rounded-full"></div>
+            <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+          </div>
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">CENTRO MEMORIA</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">24</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-green-700 rounded-full"></div>
+            <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+          </div>
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">HOSPITAL</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">12</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">46</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-green-700 rounded-full"></div>
+            <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-14 px-7 bg-white border-b border-zinc-200 inline-flex justify-start items-center gap-6 overflow-hidden">
+        <div class="flex-1 flex justify-start items-center gap-3 overflow-hidden">
+          <div class="size-4 relative overflow-hidden">
+            <div class="w-3 h-3.5 left-[2.83px] top-[1.42px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+          </div>
+          <div class="justify-start text-zinc-800 text-xs font-semibold font-['Inter']">MUSEO NACIONAL</div>
+        </div>
+        <div class="w-96 flex justify-start items-start gap-1.5 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">24</div>
+          </div>
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">46</div>
+          </div>
+        </div>
+        <div class="w-44 flex justify-start items-start overflow-hidden">
+          <div class="size- rounded-[100px] flex justify-start items-center gap-1.5 overflow-hidden">
+            <div class="size-1.5 bg-green-700 rounded-full"></div>
+            <div class="justify-start text-green-700 text-xs font-bold font-['Inter'] tracking-wide">ABIERTA</div>
+          </div>
+        </div>
+        <div class="size-5 relative overflow-hidden">
+          <div class="w-[5px] h-2.5 left-[7.50px] top-[5px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-400"></div>
+        </div>
+      </div>
+      <div class="self-stretch h-12 px-7 inline-flex justify-between items-center overflow-hidden">
+        <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">8 estaciones en el rango seleccionado</div>
+        <div class="size- flex justify-start items-center gap-2 overflow-hidden">
+          <div class="h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md flex justify-center items-center overflow-hidden">
+            <div class="justify-start text-zinc-800 text-xs font-bold font-['Inter']">12</div>
+          </div>
+          <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Número de ruta asignada</div>
         </div>
       </div>
     </div>
   </div>
-  <div style="align-self: stretch; background: white; overflow: hidden; border-radius: 12px; outline: 1px #E1E5EA solid; outline-offset: -1px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
-    <div style="align-self: stretch; padding-top: 26px; padding-bottom: 22px; padding-left: 28px; padding-right: 28px; overflow: hidden; justify-content: space-between; align-items: center; display: inline-flex">
-      <div style="overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 7px; display: inline-flex">
-        <div style="color: #20252B; font-size: 23px; font-family: Inter; font-weight: 700; word-wrap: break-word">Catálogo de estaciones</div>
-        <div style="color: #68717D; font-size: 13px; font-family: Inter; font-weight: 400; word-wrap: break-word">Explora la red por nombre, en orden alfabético.</div>
+  <div class="self-stretch h-20 px-20 bg-white border-t border-zinc-200 inline-flex justify-between items-center overflow-hidden">
+    <div class="size- flex justify-start items-center gap-2 overflow-hidden">
+      <div class="size-4 relative overflow-hidden">
+        <div class="size-3.5 left-[1.33px] top-[1.33px] absolute outline outline-1 outline-offset-[-0.50px] outline-gray-500"></div>
       </div>
-      <div style="overflow: hidden; justify-content: flex-start; align-items: center; gap: 18px; display: flex">
-        <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">8 estaciones</div>
-        <div style="color: #17834C; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">● 7 abiertas</div>
-        <div style="color: #E31B23; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">● 1 cerrada</div>
-      </div>
+      <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">El estado de las estaciones puede cambiar por novedades en la operación.</div>
     </div>
-    <div style="align-self: stretch; padding-top: 18px; padding-bottom: 20px; padding-left: 28px; padding-right: 28px; background: #FAFBFC; overflow: hidden; border-top: 1px #E1E5EA solid; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: flex-end; gap: 16px; display: inline-flex">
-      <div style="width: 248px; height: 64px; overflow: hidden; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; display: inline-flex">
-        <div style="overflow: hidden; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-          <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
-            <div style="width: 13.33px; height: 9.33px; left: 1.33px; top: 3.33px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
-          </div>
-          <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 400; word-wrap: break-word">Filtrar por rango</div>
-        </div>
-        <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">Elige la letra inicial y la letra final.</div>
-      </div>
-      <div style="width: 172px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 7px; display: inline-flex">
-        <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Desde</div>
-        <div style="align-self: stretch; height: 42px; padding-left: 12px; padding-right: 12px; background: white; overflow: hidden; border-radius: 8px; outline: 1px #E1E5EA solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
-          <div style="color: #20252B; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">A</div>
-          <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
-            <div style="width: 8px; height: 4px; left: 4px; top: 6px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
-          </div>
-        </div>
-      </div>
-      <div style="width: 172px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 7px; display: inline-flex">
-        <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Hasta</div>
-        <div style="align-self: stretch; height: 42px; padding-left: 12px; padding-right: 12px; background: white; overflow: hidden; border-radius: 8px; outline: 1px #E1E5EA solid; outline-offset: -1px; justify-content: space-between; align-items: center; display: inline-flex">
-          <div style="color: #20252B; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">M</div>
-          <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
-            <div style="width: 8px; height: 4px; left: 4px; top: 6px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
-          </div>
-        </div>
-      </div>
-      <div style="height: 42px; padding-left: 22px; padding-right: 22px; background: #E31B23; overflow: hidden; border-radius: 8px; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="color: white; font-size: 13px; font-family: Inter; font-weight: 400; word-wrap: break-word">Ver Rango</div>
-        <div style="width: 16px; height: 16px; position: relative; overflow: hidden">
-          <div style="width: 9.33px; height: 9.33px; left: 3.33px; top: 3.33px; position: absolute; outline: 1px white solid; outline-offset: -0.50px"></div>
-        </div>
-      </div>
-      <div style="flex: 1 1 0; height: 42px; overflow: hidden; justify-content: flex-end; align-items: center; display: flex">
-        <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">Mostrando de A a M</div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 44px; padding-left: 28px; padding-right: 28px; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
-        <div style="color: #68717D; font-size: 10px; font-family: Inter; font-weight: 700; letter-spacing: 1px; word-wrap: break-word">ESTACIÓN</div>
-        <div style="width: 14px; height: 14px; position: relative; overflow: hidden">
-          <div style="width: 9.92px; height: 9.33px; left: 1.75px; top: 2.33px; position: absolute; outline: 1px #68717D solid; outline-offset: -0.50px"></div>
-        </div>
-      </div>
-      <div style="width: 370px; color: #68717D; font-size: 10px; font-family: Inter; font-weight: 700; letter-spacing: 1px; word-wrap: break-word">RUTAS</div>
-      <div style="width: 182px; color: #68717D; font-size: 10px; font-family: Inter; font-weight: 700; letter-spacing: 1px; word-wrap: break-word">ESTADO</div>
-      <div style="width: 20px; height: 14px"></div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">AVENIDA JIMÉNEZ</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">12</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">24</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-          <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">BICENTENARIO</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">12</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">46</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-          <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: #FFF4F4; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #E31B23 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #E31B23; font-size: 13px; font-family: Inter; font-weight: 700; word-wrap: break-word">CAL CENTRAL</div>
-        <div style="color: #E31B23; font-size: 10px; font-family: Inter; font-weight: 400; word-wrap: break-word">Seleccionada</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">12</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">24</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">46</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-          <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #E31B23 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">CAL ORIENTE</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">24</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">46</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #E31B23; border-radius: 9999px"></div>
-          <div style="color: #E31B23; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">CERRADA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">CALLE 26</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">12</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">24</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-          <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">CENTRO MEMORIA</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">24</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-          <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">HOSPITAL</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">12</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">46</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-          <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 55px; padding-left: 28px; padding-right: 28px; background: white; overflow: hidden; border-bottom: 1px #E1E5EA solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
-      <div style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-        <div style="width: 17px; height: 17px; position: relative; overflow: hidden">
-          <div style="width: 11.33px; height: 14.17px; left: 2.83px; top: 1.42px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-        </div>
-        <div style="color: #20252B; font-size: 13px; font-family: Inter; font-weight: 600; word-wrap: break-word">MUSEO NACIONAL</div>
-      </div>
-      <div style="width: 370px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 6px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">24</div>
-        </div>
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">46</div>
-        </div>
-      </div>
-      <div style="width: 182px; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: flex">
-        <div style="overflow: hidden; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 7px; display: flex">
-          <div style="width: 7px; height: 7px; background: #17834C; border-radius: 9999px"></div>
-          <div style="color: #17834C; font-size: 11px; font-family: Inter; font-weight: 700; letter-spacing: 0.50px; word-wrap: break-word">ABIERTA</div>
-        </div>
-      </div>
-      <div style="width: 20px; height: 20px; position: relative; overflow: hidden">
-        <div style="width: 5px; height: 10px; left: 7.50px; top: 5px; position: absolute; outline: 1px #9098A2 solid; outline-offset: -0.50px"></div>
-      </div>
-    </div>
-    <div style="align-self: stretch; height: 52px; padding-left: 28px; padding-right: 28px; overflow: hidden; justify-content: space-between; align-items: center; display: inline-flex">
-      <div style="color: #68717D; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">8 estaciones en el rango seleccionado</div>
-      <div style="overflow: hidden; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
-        <div style="height: 28px; min-width: 36px; padding-left: 10px; padding-right: 10px; background: #FFDA45; overflow: hidden; border-radius: 6px; justify-content: center; align-items: center; display: flex">
-          <div style="color: #20252B; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">12</div>
-        </div>
-        <div style="color: #68717D; font-size: 11px; font-family: Inter; font-weight: 400; word-wrap: break-word">Número de ruta asignada</div>
-      </div>
+    <div class="size- flex justify-start items-start gap-6 overflow-hidden">
+      <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Atención al usuario</div>
+      <div class="justify-start text-gray-500 text-xs font-normal font-['Inter']">Accesibilidad</div>
     </div>
   </div>
 </div>
+
+</body>
+</html>
