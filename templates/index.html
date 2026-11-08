@@ -400,7 +400,7 @@
   </div>
 </div>
 
-<script>
+<script type="text/plain" id="legacy-station-script">
 (() => {
   const searchInput = document.getElementById("station-search");
   const resultsPanel = document.getElementById("search-results-panel");
@@ -652,6 +652,304 @@
 
   updateSelectionStyles();
   selectStation(selectedStation);
+  renderCatalog();
+})();
+</script>
+
+<script>
+(() => {
+  const rawStations = typeof estacionesData === "undefined" ? [] : estacionesData;
+  const normalize = (value) => String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("es")
+    .trim();
+
+  const stations = Array.isArray(rawStations)
+    ? rawStations
+      .map((station) => ({
+        name: String(station.nombre || "").trim(),
+        status: normalize(station.estado) === "cerrada" ? "CERRADA" : "ABIERTA",
+        routes: [...new Set(Array.isArray(station.rutas)
+          ? station.rutas.map((route) => String(route).trim()).filter(Boolean)
+          : [])]
+      }))
+      .filter((station) => station.name)
+      .sort((a, b) => a.name.localeCompare(b.name, "es", { sensitivity: "base" }))
+    : [];
+
+  const searchInput = document.getElementById("station-search");
+  const resultsPanel = document.getElementById("search-results-panel");
+  const resultsLabel = document.getElementById("search-results-label");
+  const resultsCount = document.getElementById("search-results-count");
+  const resultsList = document.getElementById("search-results-list");
+  const searchResultsHint = document.getElementById("search-results-hint");
+  const selectedName = document.getElementById("selected-station-name");
+  const selectedStatus = document.getElementById("selected-station-status");
+  const selectedStatusBadge = document.getElementById("selected-status-badge");
+  const selectedStatusDot = document.getElementById("selected-status-dot");
+  const selectedRouteCount = document.getElementById("selected-route-count");
+  const selectedRoutes = document.getElementById("selected-routes");
+  const selectedMessage = document.getElementById("selected-station-message");
+  const selectedMessageText = document.getElementById("selected-station-message-text");
+  const listContainer = document.getElementById("station-list");
+  const rangeFrom = document.getElementById("station-range-from");
+  const rangeTo = document.getElementById("station-range-to");
+  const applyRange = document.getElementById("apply-station-range");
+  const rangeLabel = document.getElementById("station-range-label");
+  const sortControl = document.getElementById("station-sort-control");
+  const totalCount = document.getElementById("catalog-total-count");
+  const openCount = document.getElementById("catalog-open-count");
+  const closedCount = document.getElementById("catalog-closed-count");
+  const catalogVisibleCount = document.querySelector("#station-catalog .h-12 > div:first-child");
+
+  if (!stations.length) {
+    console.error("No se encontraron estaciones en estacionesData.");
+    return;
+  }
+
+  const initialOf = (station) => {
+    const initial = normalize(station.name).charAt(0).toLocaleUpperCase("es");
+    return /^[A-Z]$/.test(initial) ? initial : "#";
+  };
+  const initials = [...new Set(stations.map(initialOf))].sort((a, b) => {
+    if (a === "#") return -1;
+    if (b === "#") return 1;
+    return a.localeCompare(b, "es");
+  });
+
+  let selectedStation = null;
+  let sortAscending = true;
+  let appliedFrom = initials[0];
+  let appliedTo = initials.at(-1);
+
+  const createRouteBadge = (route) => {
+    const badge = document.createElement("span");
+    badge.className = "h-7 min-w-9 px-2.5 bg-yellow-300 rounded-md inline-flex justify-center items-center text-zinc-800 text-xs font-bold font-['Inter']";
+    badge.textContent = route;
+    return badge;
+  };
+
+  const renderPanel = () => {
+    selectedRoutes.replaceChildren();
+    selectedRoutes.classList.add("flex-wrap");
+    if (!selectedStation) {
+      selectedName.textContent = "Selecciona una estacion";
+      selectedStatusBadge.classList.add("hidden");
+      selectedRouteCount.textContent = "Sin rutas";
+      selectedMessage.classList.remove("bg-emerald-50", "bg-red-50");
+      selectedMessage.classList.add("bg-gray-50");
+      selectedMessageText.classList.remove("text-green-700", "text-red-600");
+      selectedMessageText.classList.add("text-gray-500");
+      selectedMessageText.textContent = "Selecciona una estacion para consultar sus rutas";
+      return;
+    }
+
+    const isOpen = selectedStation.status === "ABIERTA";
+    selectedName.textContent = selectedStation.name;
+    selectedStatus.textContent = selectedStation.status;
+    selectedStatusBadge.classList.remove("hidden", "bg-emerald-50", "bg-red-50");
+    selectedStatusBadge.classList.add(isOpen ? "bg-emerald-50" : "bg-red-50");
+    selectedStatusDot.classList.remove("bg-green-700", "bg-red-600");
+    selectedStatusDot.classList.add(isOpen ? "bg-green-700" : "bg-red-600");
+    selectedStatus.classList.remove("text-green-700", "text-red-600");
+    selectedStatus.classList.add(isOpen ? "text-green-700" : "text-red-600");
+    selectedRouteCount.textContent = `${selectedStation.routes.length} ${selectedStation.routes.length === 1 ? "ruta" : "rutas"}`;
+    selectedStation.routes.forEach((route) => selectedRoutes.appendChild(createRouteBadge(route)));
+    selectedMessage.classList.remove("bg-gray-50", "bg-emerald-50", "bg-red-50");
+    selectedMessage.classList.add(isOpen ? "bg-emerald-50" : "bg-red-50");
+    selectedMessageText.classList.remove("text-gray-500", "text-green-700", "text-red-600");
+    selectedMessageText.classList.add(isOpen ? "text-green-700" : "text-red-600");
+    selectedMessageText.textContent = isOpen
+      ? "Estacion habilitada para el servicio"
+      : "Estacion cerrada temporalmente";
+  };
+
+  const createMarker = (isSelected) => {
+    const marker = document.createElement("span");
+    marker.className = `size-3 shrink-0 rounded-[2px] border ${isSelected ? "bg-red-600 border-red-600" : "bg-white border-gray-400"}`;
+    marker.setAttribute("aria-hidden", "true");
+    return marker;
+  };
+
+  const createCatalogRow = (station) => {
+    const isSelected = station === selectedStation;
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = `station-row self-stretch min-h-14 px-7 border-b border-zinc-200 inline-flex justify-start items-center gap-6 text-left ${isSelected ? "bg-red-50" : "bg-white hover:bg-gray-50"}`;
+    row.setAttribute("aria-pressed", String(isSelected));
+
+    const nameGroup = document.createElement("span");
+    nameGroup.className = "flex-1 min-w-0 flex justify-start items-center gap-3";
+    const name = document.createElement("span");
+    name.className = `${isSelected ? "text-red-600 font-bold" : "text-zinc-800 font-semibold"} text-xs font-['Inter']`;
+    name.textContent = station.name;
+    nameGroup.append(createMarker(isSelected), name);
+    if (isSelected) {
+      const selectedLabel = document.createElement("span");
+      selectedLabel.className = "text-red-600 text-[10px] font-normal font-['Inter']";
+      selectedLabel.textContent = "Seleccionada";
+      nameGroup.appendChild(selectedLabel);
+    }
+
+    const routes = document.createElement("span");
+    routes.className = "w-96 flex flex-wrap justify-start items-center gap-1.5 py-2";
+    station.routes.forEach((route) => routes.appendChild(createRouteBadge(route)));
+    if (!station.routes.length) {
+      const noRoutes = document.createElement("span");
+      noRoutes.className = "text-gray-500 text-xs font-normal font-['Inter']";
+      noRoutes.textContent = "Sin rutas";
+      routes.appendChild(noRoutes);
+    }
+
+    const status = document.createElement("span");
+    const isOpen = station.status === "ABIERTA";
+    status.className = "w-44 flex justify-start items-center gap-1.5";
+    status.innerHTML = `<span class="size-1.5 rounded-full ${isOpen ? "bg-green-700" : "bg-red-600"}"></span>`;
+    const statusText = document.createElement("span");
+    statusText.className = `${isOpen ? "text-green-700" : "text-red-600"} text-xs font-bold font-['Inter'] tracking-wide`;
+    statusText.textContent = station.status;
+    status.appendChild(statusText);
+
+    const arrow = document.createElement("span");
+    arrow.className = "w-5 text-gray-400 text-sm";
+    arrow.textContent = ">";
+    row.append(nameGroup, routes, status, arrow);
+    row.addEventListener("click", () => selectStation(station));
+    return row;
+  };
+
+  const createResultCard = (station) => {
+    const isSelected = station === selectedStation;
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = `w-full min-h-16 px-5 py-3 border-b border-zinc-200 border-l-[3px] inline-flex justify-start items-center gap-4 text-left ${isSelected ? "bg-red-50 border-l-red-600" : "bg-white border-l-transparent hover:bg-gray-50"}`;
+    card.setAttribute("role", "option");
+    card.setAttribute("aria-selected", String(isSelected));
+    const details = document.createElement("span");
+    details.className = "flex-1 min-w-0 inline-flex flex-col items-start gap-1";
+    const name = document.createElement("span");
+    name.className = "text-zinc-800 text-base font-bold font-['Inter']";
+    name.textContent = station.name;
+    const summary = document.createElement("span");
+    summary.className = "text-gray-500 text-xs font-normal font-['Inter']";
+    summary.textContent = station.routes.length ? `Rutas: ${station.routes.join(", ")}` : "Sin rutas asignadas";
+    details.append(name, summary);
+    const status = document.createElement("span");
+    status.className = `${station.status === "ABIERTA" ? "text-green-700" : "text-red-600"} shrink-0 text-xs font-bold font-['Inter'] tracking-wide`;
+    status.textContent = station.status;
+    card.append(createMarker(isSelected), details, status);
+    card.addEventListener("click", () => selectStation(station));
+    return card;
+  };
+
+  const renderCatalog = () => {
+    const fromIndex = initials.indexOf(appliedFrom);
+    const toIndex = initials.indexOf(appliedTo);
+    const visible = stations
+      .filter((station) => {
+        const index = initials.indexOf(initialOf(station));
+        return index >= fromIndex && index <= toIndex;
+      })
+      .sort((a, b) => {
+        const result = a.name.localeCompare(b.name, "es", { sensitivity: "base" });
+        return sortAscending ? result : -result;
+      });
+
+    listContainer.replaceChildren();
+    if (visible.length) {
+      visible.forEach((station) => listContainer.appendChild(createCatalogRow(station)));
+    } else {
+      const empty = document.createElement("p");
+      empty.className = "px-7 py-5 text-gray-500 text-sm";
+      empty.textContent = "No hay estaciones en este rango.";
+      listContainer.appendChild(empty);
+    }
+    const unit = visible.length === 1 ? "estacion" : "estaciones";
+    rangeLabel.textContent = `Mostrando de ${appliedFrom} a ${appliedTo}: ${visible.length} ${unit}`;
+    if (catalogVisibleCount) catalogVisibleCount.textContent = `${visible.length} ${unit} en el rango seleccionado`;
+  };
+
+  const renderSearchResults = () => {
+    const query = normalize(searchInput.value);
+    resultsList.replaceChildren();
+    if (!query) {
+      resultsPanel.hidden = true;
+      return;
+    }
+    const matches = stations.filter((station) => normalize(station.name).includes(query));
+    resultsPanel.hidden = false;
+    resultsList.classList.add("max-h-96", "overflow-y-auto");
+    resultsLabel.textContent = `Coincidencias para "${searchInput.value.trim()}"`;
+    resultsCount.textContent = `${matches.length} ${matches.length === 1 ? "resultado" : "resultados"}`;
+    searchResultsHint.classList.toggle("hidden", !matches.length);
+    if (!matches.length) {
+      const empty = document.createElement("p");
+      empty.className = "px-5 py-4 text-gray-500 text-sm";
+      empty.textContent = "No se encontraron estaciones con ese nombre.";
+      resultsList.appendChild(empty);
+      return;
+    }
+    matches.forEach((station) => resultsList.appendChild(createResultCard(station)));
+  };
+
+  const selectStation = (station) => {
+    selectedStation = station;
+    renderPanel();
+    renderCatalog();
+    renderSearchResults();
+  };
+
+  const fillRangeSelect = (select, value) => {
+    select.replaceChildren();
+    initials.forEach((initial) => {
+      const option = document.createElement("option");
+      option.value = initial;
+      option.textContent = initial === "#" ? "0-9" : initial;
+      select.appendChild(option);
+    });
+    select.value = value;
+  };
+
+  fillRangeSelect(rangeFrom, appliedFrom);
+  fillRangeSelect(rangeTo, appliedTo);
+  totalCount.textContent = `${stations.length} estaciones`;
+  const totalOpen = stations.filter((station) => station.status === "ABIERTA").length;
+  openCount.textContent = `● ${totalOpen} abiertas`;
+  const totalClosed = stations.length - totalOpen;
+  closedCount.textContent = `● ${totalClosed} ${totalClosed === 1 ? "cerrada" : "cerradas"}`;
+
+  searchInput.addEventListener("input", renderSearchResults);
+  applyRange.addEventListener("click", () => {
+    const fromIndex = initials.indexOf(rangeFrom.value);
+    const toIndex = initials.indexOf(rangeTo.value);
+    if (fromIndex > toIndex) {
+      rangeLabel.textContent = "El inicio del rango debe ser anterior al final.";
+      return;
+    }
+    appliedFrom = rangeFrom.value;
+    appliedTo = rangeTo.value;
+    renderCatalog();
+  });
+  sortControl.addEventListener("click", () => {
+    sortAscending = !sortAscending;
+    sortControl.setAttribute("aria-sort", sortAscending ? "ascending" : "descending");
+    renderCatalog();
+  });
+  sortControl.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      sortControl.click();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      searchInput.focus();
+    }
+  });
+
+  renderPanel();
   renderCatalog();
 })();
 </script>
