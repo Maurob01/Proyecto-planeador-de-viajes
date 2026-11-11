@@ -1,3 +1,33 @@
 repositorio: https://github.com/Maurob01/Proyecto-planeador-de-viajes 
-R11:
-R12:
+
+# R11: Rendimiento
+
+R11 revisa cuánto tiempo tarda cada operación cuando la red crece. En este proyecto se deben medir R1, R2 y R3 con una red de tamaño `n` y después con una red de tamaño `2n`.
+
+`n` es la cantidad total de estaciones. Si la red tiene más estaciones, el programa debe seguir respondiendo de una forma razonable.
+
+- R1 busca una estación usando búsqueda binaria. Se espera un tiempo de `O(log n)`.
+- R2 actualmente recorre las estaciones hasta encontrar las coincidencias. Su peor caso es `O(n)`.
+- R3 ubica el inicio y final del rango con dos búsquedas binarias, y luego recorre las estaciones encontradas. Su tiempo es `O(log n + r)`, donde `r` es la cantidad de estaciones que se muestran.
+
+Para terminar R11 falta crear la medición de tiempos y una gráfica o panel que compare los resultados de `n` y `2n`.
+
+# R12: Decisiones del motor
+
+## R1. Buscar una estación
+
+Las estaciones se guardan en una lista ordenada alfabéticamente. Para buscar una estación se usa búsqueda binaria: se revisa la estación de la mitad y se descarta la mitad que no puede contener el nombre buscado.
+
+Se consideró recorrer toda la lista desde el inicio, pero se descartó porque tarda más cuando hay muchas estaciones. La búsqueda binaria tarda `O(log n)`.
+
+## R2. Autocompletar
+
+Las estaciones también se revisan en orden alfabético. El programa compara cada nombre con el prefijo escrito por el usuario y guarda como máximo `k` resultados abiertos.
+
+La ventaja es que el código es fácil de entender. En el peor caso tarda `O(n)` porque puede revisar toda la lista. Una mejora futura es usar búsqueda binaria para encontrar el primer nombre con ese prefijo y lograr `O(log n + k)`.
+
+## R3. Listar un rango
+
+Para mostrar estaciones entre dos nombres, el programa hace dos búsquedas binarias: una encuentra dónde empieza el rango y otra dónde termina. Después recorre únicamente las estaciones de ese rango y muestra las que están abiertas.
+
+Se consideró recorrer toda la lista, pero se descartó porque revisaría estaciones que no pertenecen al rango. La complejidad es `O(log n + r)`, donde `r` es el número de estaciones devueltas.
